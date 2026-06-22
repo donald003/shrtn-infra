@@ -9,3 +9,9 @@ resource "azurerm_key_vault" "main" {
   purge_protection_enabled = false
   sku_name = "standard"
 }
+
+resource "random_password" "pg_password" {
+  length           = 24
+  special          = true
+  override_special = "!#$%&*()-_=+[]{}<>:?"
+}

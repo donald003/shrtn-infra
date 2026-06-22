@@ -15,3 +15,15 @@ module "keyvault" {
   location = var.location
   resource_group_name = module.networking.resource_group_name
 }
+
+module "database" {
+  source = "../modules/database"
+
+  project = var.project
+  environment = var.environment
+  location = var.location
+  resource_group_name = module.networking.resource_group_name
+  vnet_id = module.networking.vnet_id
+  postgres_subnet_id = module.networking.postgres_subnet_id
+  pg_password = module.keyvault.pg_password
+}

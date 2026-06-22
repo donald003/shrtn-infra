@@ -33,3 +33,18 @@ output "vault_uri" {
 output "vault_name" {
   value = module.keyvault.vault_name
 }
+
+output "pg_password" {
+  value = module.keyvault.pg_password
+  sensitive = true
+}
+
+output "postgresql_server_name" {
+  value = module.database.postgresql_server_name
+}
+output "postgresql_server_fqdn" {
+  value = module.database.postgresql_server_fqdn
+}
+output "postgresql_server_id" {
+  value = module.database.postgresql_server_id
+}

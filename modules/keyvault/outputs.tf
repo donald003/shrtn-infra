@@ -9,3 +9,7 @@ output "vault_uri" {
 output "vault_name" {
   value = azurerm_key_vault.main.name
 }
+
+output "pg_password" {
+  value = random_password.pg_password.result
+}
