@@ -5,3 +5,5 @@ Private DNS Zone linked to my vnet
 Database for Postgres flexible server ready, public network access disabled
 Key vVult secured via RBAC
 Key Vault Secret stores admin password
+I have the working app ready, tested on Docker Desktop
+ACR was created
