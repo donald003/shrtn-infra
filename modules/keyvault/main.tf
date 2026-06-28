@@ -13,7 +13,7 @@ resource "azurerm_key_vault" "main" {
 resource "random_password" "pg_password" {
   length           = 24
   special          = true
-  override_special = "!@$^*()-_=+"
+  override_special = "-_=+"
 }
 
 resource "azurerm_key_vault_secret" "pg_password" {

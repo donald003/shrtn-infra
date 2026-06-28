@@ -18,6 +18,10 @@ output "aks_subnet_id" {
   value = module.networking.aks_subnet_id
 }
 
+output "aci_subnet_id" {
+  value = module.networking.aci_subnet_id
+}
+
 output "postgres_subnet_id" {
   value = module.networking.postgres_subnet_id
 }
@@ -47,4 +51,12 @@ output "postgresql_server_fqdn" {
 }
 output "postgresql_server_id" {
   value = module.database.postgresql_server_id
+}
+
+output "acr_id" {
+  value = module.compute.acr_id
+}
+
+output "acr_login_server" {
+  value = module.compute.acr_login_server
 }

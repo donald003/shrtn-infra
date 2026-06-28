@@ -23,6 +23,21 @@ resource "azurerm_subnet" "aks" {
   address_prefixes     = [var.aks_subnet_prefix]
 }
 
+resource "azurerm_subnet" "aci" {
+  name                 = "snet-aci"
+  resource_group_name  = azurerm_resource_group.main.name
+  virtual_network_name = azurerm_virtual_network.main.name
+  address_prefixes     = [var.aci_subnet_prefix]
+
+  delegation {
+    name = "aci-delegation"
+    service_delegation {
+      name    = "Microsoft.ContainerInstance/containerGroups"
+      actions = ["Microsoft.Network/virtualNetworks/subnets/action"]
+    }
+  }
+}
+
 resource "azurerm_subnet" "postgres" {
   name                 = "snet-postgres"
   resource_group_name  = azurerm_resource_group.main.name

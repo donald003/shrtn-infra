@@ -35,5 +35,8 @@ module "compute" {
   environment = var.environment
   location = var.location
   resource_group_name = module.networking.resource_group_name
-
+  aci_subnet_id = module.networking.aci_subnet_id
+  key_vault_id = module.keyvault.vault_id
+  postgres_fqdn = module.database.postgresql_server_fqdn
+  db_password = module.keyvault.pg_password
 }

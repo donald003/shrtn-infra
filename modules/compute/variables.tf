@@ -17,3 +17,24 @@ variable "resource_group_name" {
     description = "Name of the Resource Group the Key Vault is deployed"
     type = string
 }
+
+variable "aci_subnet_id" {
+  description = "ID of the spoke subnet"
+  type = string
+}
+
+variable "key_vault_id" {
+  description = "ID of the key vault"
+  type = string
+}
+
+variable "postgres_fqdn" {
+  type        = string
+  description = "The fully qualified domain name of the PostgreSQL server"
+}
+
+variable "db_password" {
+  type        = string
+  sensitive   = true
+  description = "Database password passed from the generation module"
+}

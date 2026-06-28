@@ -29,3 +29,9 @@ variable "postgres_subnet_prefix" {
   type        = string
   default     = "10.10.2.0/24"
 }
+
+variable "aci_subnet_prefix" {
+  description = "CIDR for the AKS node subnet"
+  type        = string
+  default     = "10.10.3.0/24"
+}
